@@ -1,0 +1,13 @@
+stage Installing cower
+: cd /tmp
+: wget https://aur.archlinux.org/cgit/aur.git/snapshot/cower.tar.gz
+: tar -xf cower.tar.gz
+: cd cower
+: makepkg --skippgpcheck --si
+
+stage Installing pacaur
+: cd /tmp
+: wget https://aur.archlinux.org/cgit/aur.git/snapshot/pacaur.tar.gz
+: tar -xf pacaur.tar.gz
+: cd pacaur
+: makepkg --skippgpcheck --si

@@ -42,13 +42,15 @@ stage() {
     STAGE=$[$STAGE + 1]
 }
 
-echorun() {
+:() {
     echo "$fg_color[blue]$@$reset_color"
-    "$@"
+    echo "$@" >> $LOGFILE
+    "$@" |& tee -a -i $LOGFILE
 }
 
-echorunno() {
-    echorun "$@" &> /dev/null
+::() {
+   echo "$fg_color[blue]$@$reset_color"
+   "$@" &>> $LOGFILE 
 }
 
 die() {
@@ -76,9 +78,6 @@ Possible values for stage:
     400: post-installation  (after reboot)
 EOF
 }
-
-alias :='echorun'
-alias ::='echorunno'
 
 [ $# -gt 1 ] && usage       # Syntax: $0 
 opt=$1                      # If an arg is provided, that is used.

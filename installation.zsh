@@ -23,7 +23,7 @@ STAGE=100
 stage "Installation"
 
 stage "Installing base packages"
-: pacstrap /mnt base base-devel
+: pacstrap -c /mnt base base-devel
 
 stage "Generate fstab"
 : genfstab -p -U /mnt >> /mnt/etc/fstab

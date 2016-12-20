@@ -23,7 +23,8 @@ STAGE=100
 stage "Installation"
 
 stage "Installing base packages"
-: pacstrap -c /mnt base base-devel
+: pacstrap -c /mnt base base-devel zsh
+# Please notice that zsh is required by alfieri itself :)
 
 stage "Generate fstab"
 : genfstab -p -U /mnt >> /mnt/etc/fstab

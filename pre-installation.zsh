@@ -30,6 +30,8 @@ Please verify that you have done the following steps:
 EOF
 _continue
 
+ismountpoint /mnt || die "You MUST mount your target system's root on /mnt"
+
 stage "Connect to the internet"
 : ping www.google.com -c2 ||  die "[FATAL] Check your internet connection before running this script"
 

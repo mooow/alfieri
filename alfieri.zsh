@@ -66,6 +66,10 @@ _continue() {
     [[ "$cont" != "Y" && "$cont" != "y" ]] && exit 0
 }
 
+ismountpoint() {
+    awk '{print $2}' /etc/mtab | grep -x "$1"
+}
+
 usage() {
     cat << EOF
 Syntax: $0 [stage]

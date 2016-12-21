@@ -36,7 +36,7 @@ loadstages() {
 
 stage() {
     echo -n "$fg_bold[yellow]"
-    printf "Stage %3d: " $STAGE
+    printf "Stage %03d: " $STAGE
     echo -n "$reset_color"
     echo "$@"
     STAGE=$[$STAGE + 1]

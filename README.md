@@ -43,6 +43,15 @@ Alfieri defines three built-in Major stages. They are:
 Major stages after 5yy are not defined by `alfieri`. The user can use them as
 they wish (if they want) - they are simply executed sequentially.
 
+## Configuration files
+There are some configuration files that you **are required** to edit before
+attempting installation. They are:
+* `alfieri.cfg`  
+    Here are defined some variables that specify alfieri's behaviour.
+* `locale.gen`  
+    **This will be /etc/locale.gen on your target system!!**
+* `2xx.pacman` and `3xx.pacman`__ see below.
+
 ### About 2xx.pacman and 3xx.pacman
 These files contain a list of packages that will be installed during Major stages
 2 and 3.
@@ -53,7 +62,7 @@ not required - i.e. you could put all packages in `2xx.pacman` but that's not
 recommended.
 
 ## Using
-1. Edit the configuration files: `alfieri.cfg`, `2xx.pacman`, `3xx.pacman`
+1. Edit the configuration files: (see above)
 2. Prepare the hard disk (partition, format, mount inside /mnt)
 3. On the installation medium run `alfieri 000`
 4. After reboot you should see a minimal ArchLinux system. From there you may

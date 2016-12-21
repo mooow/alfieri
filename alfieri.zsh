@@ -43,13 +43,13 @@ stage() {
 }
 
 :() {
-    echo "$fg_color[blue]$@$reset_color"
+    echo "$fg_color[blue]$@$reset_color" 1>&2
     echo "$@" >> $LOGFILE
     "$@" |& tee -a -i $LOGFILE
 }
 
 ::() {
-   echo "$fg_color[blue]$@$reset_color"
+   echo "$fg_color[blue]$@$reset_color" 1>&2
    "$@" &>> $LOGFILE 
 }
 
